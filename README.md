@@ -6,7 +6,7 @@
 
 Acción táctica **CQB con vista cenital** en un único `index.html`, sin dependencias, con la misma estética retro que [XENO MARINE](https://github.com/malbot042/alien). Formas parte de una unidad de intervención: entras en el edificio, despejas sala a sala y **detienes a los sospechosos**. Disparar es el último recurso: se puntúa más detener que abatir, y se penaliza a quien dispara a alguien que se rinde o a un civil.
 
-Se juega con teclado y ratón, con mando o en el móvil con controles táctiles. Se dibuja a la resolución de tu pantalla: sprites suavizados, texto nítido, niebla con bordes difuminados y movimiento y cámara sin saltos de píxel. Por encima va un filtro CRT suave (líneas de barrido, separación de colores y brillo) que se quita con **K**.
+Se juega con teclado y ratón, con mando o en el móvil con controles táctiles. Se dibuja a la resolución de tu pantalla: personajes vectoriales animados, texto nítido, niebla con bordes difuminados y movimiento y cámara sin saltos de píxel. Por encima va un filtro CRT suave (líneas de barrido, separación de colores y brillo) que se quita con **K**.
 
 ## Campaña: Operación Marea Negra
 Ocho misiones encadenadas. Cada una empieza con un **informe de la central** y, al terminarla, la central cuenta qué habéis descubierto y adónde lleva la pista. Para abrir la siguiente misión hay que completar la anterior.
@@ -50,7 +50,7 @@ Antes de desplegar eliges:
   - **Carga explosiva:** revienta la puerta y aturde a toda la sala (cuidado con los rehenes).
   - **Aturdidoras extra.**
 - **Agente:** hombre o mujer (tu voz y tu aspecto). El equipo mezcla agentes de ambos sexos.
-- **Entrada de Bravo:** puerta principal, puerta trasera o **azotea** (en los edificios de dos plantas).
+- **Plano y entradas** (tecla **Tab** en el informe): ves el plano del edificio (paredes, puertas, puertas blindadas, ventanas y escaleras, planta por planta) y eliges por qué puerta entra **Alfa** (contigo) y por cuál entra **Bravo**: principal, trasera, lateral o azotea. Si Bravo entra por otra puerta, empieza **apilado** en ella; durante la misión, con **B**, los dos grupos revientan sus puertas a la vez. El plano también aparece tenue en el minimapa.
 
 ## Cómo se juega
 - **Niebla de guerra:** solo ves lo que tú, tu equipo o tu cámara tenéis en línea de visión. Las paredes y las puertas cerradas tapan la vista; las ventanas no.
@@ -60,6 +60,9 @@ Antes de desplegar eliges:
 - **Sonido realista:** disparos por capas (chasquido, estampido, golpe grave y eco de la sala) distintos según el arma, reverberación, **sonido posicional** (izquierda/derecha y distancia), sonidos amortiguados tras paredes o desde otra planta, y **pasos** de todos los personajes: oirás a un sospechoso moverse al otro lado de la puerta.
 - **Detener:** acércate a un sospechoso rendido o aturdido y **mantén E** para esposarlo. Las armas que suelten se aseguran al pasar por encima.
 - **Civiles y rehenes:** mantén **E** junto a ellos para ponerlos a salvo; salen solos del edificio.
+- **Salas a oscuras:** algunas salas no tienen luz. Solo ves lo que alumbran las **linternas** del equipo (conos de luz que no atraviesan paredes), los fogonazos y las explosiones. Con **L** apagas tu linterna: a oscuras los sospechosos casi no te ven, pero tú tampoco a ellos. Con la linterna encendida, en cambio, te detectan aunque no miren hacia ti.
+- **Humo:** las explosiones, las aturdidoras, las puertas reventadas y los disparos dejan humo que se disipa poco a poco.
+- **Personajes animados:** agentes, sospechosos y civiles se dibujan en alta resolución, con piernas que se mueven al andar, armas y escudo en las manos, manos en alto al rendirse, esposados a la espalda y animación de recarga en la que cae el cargador al suelo.
 - **Plantas y escaleras:** las escaleras (flechas amarillas) se usan pisándolas. El minimapa muestra la planta actual.
 - **Salas con función:** cocina, baños, dormitorios, oficinas, archivo, cámara acorazada, pista de baile, sala VIP, laboratorio, despacho, biblioteca, taller, garaje, patio… cada una con sus muebles. Abajo aparece el nombre de la sala en la que estás.
 
@@ -128,6 +131,7 @@ Caminar con **Shift** (sigilo) es más lento pero más preciso; disparar corrien
 | E / F | Abrir o cerrar puerta / patada |
 | G / clic derecho | Granada aturdidora |
 | T / Y | Equipo táctico 1 / 2 |
+| L | Linterna sí / no |
 | 1–2, Q, rueda / R | Cambiar de arma / recargar |
 | Tab | Elegir grupo: todos, Alfa, Bravo |
 | C / V / X / B | Seguir-esperar / ir / apilarse / ¡adelante! |
@@ -144,3 +148,27 @@ Caminar con **Shift** (sigilo) es más lento pero más preciso; disparar corrien
 Descarga el repositorio y abre `index.html` en el navegador. Con `index.html?portada` se muestra la portada sin menús.
 
 > Para que la dirección de GitHub Pages funcione, Pages debe estar activado en **Settings → Pages → Deploy from a branch → rama `main`, carpeta `/ (root)`**.
+
+## Desarrollo
+El código está dividido en `src/` y se une en `index.html` con:
+
+```
+node build.js           # genera index.html
+node build.js --check   # comprueba que index.html está al día
+```
+
+| Fichero | Contenido |
+|---|---|
+| `00_cabecera.html` | HTML, estilos, lienzos y utilidades |
+| `01_fuente.js` | Fuente de píxeles (portada antigua) |
+| `02_graficos_mapa.js` | Texto, sprites, baldosas, temas, salas, generador de mapas y muebles |
+| `03_audio_voces.js` | Motor de sonido, efectos posicionales, música y voces |
+| `04_nucleo.js` | Datos (dificultades, armas, misiones), plantas, colisiones, puertas, gritos |
+| `05_logica.js` | Preparación y despliegue, jugador, órdenes de grupo, IA, daño, partida |
+| `06_render.js` | Visión, niebla, oscuridad, personajes, mundo y HUD |
+| `07_portada.js` | Portada |
+| `08_interfaz.js` | Menús, informe, plano, resultados y pausa |
+| `09_pantalla_entrada.js` | Filtro CRT, tamaño de pantalla, teclado, ratón, mando y táctil |
+| `10_bucle.js` | Estados del juego y bucle principal |
+
+Hay que editar los ficheros de `src/` y volver a generar `index.html`, que es el que publica GitHub Pages.
