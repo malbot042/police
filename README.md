@@ -6,7 +6,7 @@
 
 Acción táctica **CQB con vista cenital** en un único `index.html`, sin dependencias, con la misma estética retro que [XENO MARINE](https://github.com/malbot042/alien). Formas parte de una unidad de intervención: entras en el edificio, despejas sala a sala y **detienes a los sospechosos**. Disparar es el último recurso: se puntúa más detener que abatir, y se penaliza a quien dispara a alguien que se rinde o a un civil.
 
-Se juega con teclado y ratón, con mando o en el móvil con controles táctiles. La pantalla imita un CRT plano: líneas de barrido, rejilla RGB, separación de colores, brillo difuso y ruido.
+Se juega con teclado y ratón, con mando o en el móvil con controles táctiles. Se dibuja a la resolución de tu pantalla: sprites suavizados, texto nítido, niebla con bordes difuminados y movimiento y cámara sin saltos de píxel. Por encima va un filtro CRT suave (líneas de barrido, separación de colores y brillo) que se quita con **K**.
 
 ## Campaña: Operación Marea Negra
 Ocho misiones encadenadas. Cada una empieza con un **informe de la central** y, al terminarla, la central cuenta qué habéis descubierto y adónde lleva la pista. Para abrir la siguiente misión hay que completar la anterior.
@@ -131,6 +131,7 @@ Caminar con **Shift** (sigilo) es más lento pero más preciso; disparar corrien
 | C / V / X / B | Seguir-esperar / ir / apilarse / ¡adelante! |
 | P / Esc | Pausa (Enter en pausa: abandonar) |
 | M / N / Z | Sonido / minimapa / zoom |
+| K | Filtro CRT sí / no |
 | H | Controles (en la portada) |
 
 **Mando:** sticks para moverse y apuntar, RT disparar, A usar, B gritar, X recargar, Y cambiar arma, LT aturdidora, RB patada, LB elegir grupo, Select / R3 equipo táctico. En la cruceta: arriba apilarse, abajo ¡adelante!, izquierda ir y derecha seguir/esperar.
