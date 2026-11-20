@@ -49,13 +49,15 @@ Antes de desplegar eliges:
   - **Ariete:** se mantiene la tecla pulsada y abre cualquier puerta, también las blindadas.
   - **Carga explosiva:** revienta la puerta y aturde a toda la sala (cuidado con los rehenes).
   - **Aturdidoras extra.**
+- **Agente:** hombre o mujer (tu voz y tu aspecto). El equipo mezcla agentes de ambos sexos.
 - **Entrada de Bravo:** puerta principal, puerta trasera o **azotea** (en los edificios de dos plantas).
 
 ## Cómo se juega
 - **Niebla de guerra:** solo ves lo que tú, tu equipo o tu cámara tenéis en línea de visión. Las paredes y las puertas cerradas tapan la vista; las ventanas no.
 - **Puertas:** se abren al empujarlas o con **E**. Con **F** les das una patada que aturde un instante a quien esté detrás. El punto rojo indica una puerta **cerrada con llave** (se abre a patadas). Las **blindadas** (gris metálico, punto naranja) solo se abren con ariete o carga.
 - **¡Policía!** Con **Espacio** gritas para identificarte. Los sospechosos pueden rendirse: es más probable si están aturdidos, heridos, desarmados o rodeados.
-- **Voces:** sospechosos, civiles y compañeros gritan («¡Están aquí!», «¡Me rindo!», «¡No disparen!», «¡Despejado!»). El texto aparece sobre ellos aunque no los veas, y se oye con voz sintetizada si el navegador lo permite. Así sabes qué pasa detrás de una pared.
+- **Voces:** sospechosos, civiles, compañeros y la operadora de la central hablan con **voces masculinas y femeninas**. Cada personaje tiene su propio timbre y velocidad, y la **entonación cambia con la emoción**: órdenes firmes, súplicas al rendirse, pánico de los civiles, amenazas de los captores o preguntas cuando oyen algo («¿Quién anda ahí?»). Las frases se dicen por partes («¡Policía!… ¡Al suelo!») y la voz baja si quien habla está lejos o detrás de una pared. Los compañeros lejanos o en otra planta hablan **por radio**, con su chasquido de entrada y salida. El texto aparece también sobre quien habla, aunque no lo veas. Las voces son las del sintetizador del navegador: cuantas más voces en español tenga tu sistema, más variedad.
+- **Sonido realista:** disparos por capas (chasquido, estampido, golpe grave y eco de la sala) distintos según el arma, reverberación, **sonido posicional** (izquierda/derecha y distancia), sonidos amortiguados tras paredes o desde otra planta, y **pasos** de todos los personajes: oirás a un sospechoso moverse al otro lado de la puerta.
 - **Detener:** acércate a un sospechoso rendido o aturdido y **mantén E** para esposarlo. Las armas que suelten se aseguran al pasar por encima.
 - **Civiles y rehenes:** mantén **E** junto a ellos para ponerlos a salvo; salen solos del edificio.
 - **Plantas y escaleras:** las escaleras (flechas amarillas) se usan pisándolas. El minimapa muestra la planta actual.
